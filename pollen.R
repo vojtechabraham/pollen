@@ -1,6 +1,7 @@
 
 # row names are species/pollen taxa, colnames are sample ids
 
+
 spectra_to_target_sum <- function(table, rand, summ) { 
   sample_ids <- colnames(table)
   stan <- min(colSums(table)) # this line finds the lowest sum
@@ -8,7 +9,7 @@ spectra_to_target_sum <- function(table, rand, summ) {
   print(paste("all samples will be resampled to:", stan,"grains"))
   ssv <- data.frame(site=sample_ids, effort=NA,  q50=NA)
   retab <- rownames(table)
-  i=7
+  
   for(i in 1:NROW(sample_ids)){
 
     sit <- data.frame(rownames(table[table[,i]>0 ,]) , table[(table[,i]>0) ,i], stringsAsFactors = F)
