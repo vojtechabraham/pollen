@@ -3,7 +3,7 @@
 
 spectra_to_target_sum <- function(table, rand, summ) { 
   sample_ids <- colnames(table)
-  stan=min(colSums(table)) # this line finds the lowest sum
+  stan <- min(colSums(table)) # this line finds the lowest sum
   if(stan>summ) {stan <- summ}
   print(paste("all samples will be resampled to:", stan,"grains"))
   ssv <- data.frame(site=sample_ids, effort=NA,  q50=NA)
